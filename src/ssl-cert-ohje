@@ -1,0 +1,24 @@
+==== Here's how to generate ssl-keys for local usage: ====
+
+# Install mkcert
+brew install mkcert
+
+# Generates key 'example.com+5-key.pem' and cert 'example.com+5.pem' files in current directory for domains 'example.com', example.test, localhost... 
+mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+
+# Use the path to these files in your development.env like so:
+SSLKEYPATH='SHOULD NOT BE EMPTY'
+SSLCERTPATH='SHOULD NOT BE EMPTY'
+
+# Restart server and should work
+
+
+==== LIVE SERVER SSL STUFF BELOW ====
+
+On the server this is where the ssl-certification stuff is located at:
+
+Certificate is saved at: /etc/letsencrypt/live/gymbook.pro/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/gymbook.pro/privkey.pem
+This certificate expires on 2022-08-23.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
